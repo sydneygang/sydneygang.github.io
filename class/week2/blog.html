@@ -1,66 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-<style media="screen">
-  .height1 {
-    height: 600px;
-  }
-  .height2 {
-    height: 100px;
-  }
-  .pink {
-    background-color: pink;
-  }
-  .blue {
-    background-color: blue;
-  }
-  .green {
-    background-color: green;
-  }
+  <style media="screen">
+    .height1 {
+      height: 600px;
+    }
 
-</style>
-  </head>
-  <body>
-<div class="row">
-  <div class="col-md-4 height1 pink">
+    .height2 {
+      height: 150px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 height1 randomColor">
+
+      </div>
+      <div class="col-md-9 height1 randomColor">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 height2 randomColor">
+
+      </div>
+    </div>
   </div>
-  <div class="col-md-8 height1 blue">
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
 
-  </div>
+    //when the document is loaded
+    $(document).ready(function() {
+      //this function get a random color between 0 and 255
+      function getRandomColor() {
+        return Math.floor(Math.random() * 255);
+      }
+      //get all the elements (div) with the class .randomColor
+      var randomColor = $(".randomColor");
 
-</div>
-<div class="row">
-  <div class="col-md-12 height2 green">
+      //loop through all elements
+      //for each element change the css background color to RGB + 3 random colors
+      $.each(randomColor, function(index, item) {
+        $(this).css("background-color", "RGB(" + getRandomColor() + "," + getRandomColor() + "," + getRandomColor() + ")");
+      })
 
-  </div>
+    })
+  </script>
+</body>
 
-</div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script type="text/JavaScript">
-$(document).ready(function() {
-  function getRandomColour() {
-    return math.floor(math.random() * 255);
-  }
-  var randomColor = $(".randomColor")
-}
-</script>
-  </body>
 </html>
