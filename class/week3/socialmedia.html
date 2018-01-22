@@ -5,10 +5,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- makes information  for browser to understand the height -!/
-    <title></title>
+  <title>social media</title>
 
-    <!- Bootstrap -->
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
@@ -24,58 +23,84 @@
     }
 
     .height2 {
-      height: 350px;
+      height: 200px;
     }
 
     .height3 {
       height: 100px;
     }
   </style>
-  <header>
 
-    <body>
+</head>
 
-      <div class="container">
+<body>
 
-        <div class="row">
+  <div class="container">
+    <!--start row 1-->
+    <div class="row">
+      <div class="col-md-12 height1 randomColor"></div>
+      <p class="text-primary">...</p>
+    </div>
+    <!--end row 1-->
 
-          <div class="col-md-12 height1 randomColor"></div>
-          </div>
-
-        <div class="row">
-
-          <div class="col-md-12 height2 randomColor"></div>
-          </div>
-
-        <div class="row">
-
-          <div class="col-md-3 height3 randomColor"></div>
-
-          <div class="col-md-3 height3 randomColor"></div>
-
-          <div class="col-md-3 height3 randomColor"></div>
-
-          <div class="col-md-3 height3 randomColor"></div>
-        </div>
-
-        <div class="row">
-
-          <div class="col-md-3 height3 randomColor"></div>
-
-          <div class="col-md-3 height3 randomColor"></div>
-
-          <div class="col-md-3 height3 randomColor"></div>
-
-          <div class="col-md-3 height3 randomColor"></div>
-          </div>
-
-        <div class="row">
-
-          <div class="col-md-12 height1 randomColor"></div>
-          </div>
+    <!--start row 2-->
+    <div class="row">
+      <div class="col-md-3 height2 randomColor"></div>
+        <div class="col-md-7 height2 randomColor"></div>
+      <div class="col-md-2 height2 randomColor"></div>
       </div>
-    </body>
-  </header>
+    <!--end row 2-->
+
+    <!--start row 3-->
+    <div class="row">
+      <div class="col-md-3 height2 randomColor"></div>
+        <div class="col-md-7 height2 randomColor">
+          <!-- Nesting Begins-->
+          <div class="row">
+            <div class="col-md-3 height3 randomColor"></div>
+            <div class="col-md-9 height3 randomColor"></div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 height3 randomColor"></div>
+            <div class="col-md-9 height3 randomColor"></div>
+          </div>
+          <!--nESTING Ends -->
+        </div>
+      <div class="col-md-2 height2 randomColor"></div>
+      </div>
+    <!--end row 3-->
+
+    <!--start row 4-->
+    <div class="row">
+      <div class="col-md-3 height2 randomColor"></div>
+        <div class="col-md-7 height2 randomColor">
+          <!-- Nesting Begins-->
+          <div class="row">
+            <div class="col-md-3 height3 randomColor"></div>
+            <div class="col-md-9 height3 randomColor"></div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 height3 randomColor"></div>
+            <div class="col-md-9 height3 randomColor"></div>
+          </div>
+          <!--nESTING Ends -->
+        </div>
+      <div class="col-md-2 height2 randomColor"></div>
+      </div>
+    <!--end row 4-->
+
+    <!--start row 5-->
+    <div class="row">
+      <div class="col-md-12 height3 randomColor">
+
+      </div>
+    </div>
+    <!--end row 5-->
+  </div>
+
+
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -98,6 +123,6 @@
 
     })
   </script>
-  </body>
+</body>
 
 </html>
