@@ -30,6 +30,17 @@
     .height3 {
       height: 100px;
     }
+    .MakeImageFit{
+      width: 100%;
+      height: 100%;
+    }
+    .textAlignCenter{
+      text-align: center;
+    }
+    .margincenter{
+      display: block;
+      margin: 0, auto;
+    }
   </style>
   <header>
 
@@ -39,40 +50,48 @@
 
         <div class="row">
 
-          <div class="col-md-12 height1 randomColor"></div>
-          </div>
-
-        <div class="row">
-
-          <div class="col-md-12 height2 randomColor"></div>
-          </div>
-
-        <div class="row">
-
-          <div class="col-md-3 height3 randomColor"></div>
-
-          <div class="col-md-3 height3 randomColor"></div>
-
-          <div class="col-md-3 height3 randomColor"></div>
-
-          <div class="col-md-3 height3 randomColor"></div>
+          <div class="col-md-12 height1"></div>
+          <p class="text-primary">portfolio page example</p>
+          <p class="text-success">we use this color for success!</p>
+          <p class="text-danger">we use this color for danger!</p>
         </div>
 
         <div class="row">
 
-          <div class="col-md-3 height3 randomColor"></div>
-
-          <div class="col-md-3 height3 randomColor"></div>
-
-          <div class="col-md-3 height3 randomColor"></div>
-
-          <div class="col-md-3 height3 randomColor"></div>
-          </div>
+          <div class="col-md-12 height2"></div>
+          <p class="bg-primary">primary background</p>
+          <p class="bg-success">success background</p>
+          <p class="bg-info">info background</p>
+          <p class="bg-warning">warning backgroujd</p>
+          <p class="bg-danger">danger background</p>
+        </div>
 
         <div class="row">
 
+          <div class="col-md-3 height3">
+            <img class="MakeFitImage" src="img/food1.png" alt="food1"></div>
+          <div class="col-md-3 height3">
+            <img class="MakeFitImage" src="img/food2.jpg" alt="food2"></div>
+          <div class="col-md-3 height3">
+            <img class="MakeImageFit" src="img/food3.jpg" alt="food3"></div>
+          <div class="col-md-3 height3">
+            <img class="MakeImageFit" src="img/image4.png" alt="image4"></div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-3 height3">
+            <img class="MakeImageFit" src="img/image5.png" alt="image5"></div>
+          <div class="col-md-3 height">
+          <img src="img/food6.png" alt="food6"></div>
+          <div class="col-md-3 height3 randomColor"></div>
+          <div class="col-md-3 height3 randomColor"></div>
+        </div>
+
+        <div class="row">
           <div class="col-md-12 height1 randomColor"></div>
-          </div>
+        </div>
+
       </div>
     </body>
   </header>
