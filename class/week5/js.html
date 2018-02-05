@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <script>
+    //declare an empty array
+    var anotherArray = [];
+
+    //add an element to an anotherArray
+    anotherArray.push("someData");
+    anotherArray.push("4866");
+    console.log("the value of anotherArray: " + anotherArray);
+
+    var myArray = ["testing", "this", "is", "an", "array"];
+    //reference specific index in myArray
+    console.log("the value at index 2: " + myArray[2]);
+
+    var numberArray=[50,12,19,90,66,69,33,45,82,44];
+    console.log("numberArray" + myArray);
+    console.log("the number of elements in numberArray" +numberArray.lengt);
+    console.log("with some text in between:"+numberArray.join(";"));
+
+    //var sum = numberArray [0]+numberArray[1].....
+    //to loop through an arraywe need to know 3 things:
+    //1. the index where to start
+    //2. the index where to end
+    //3. the increment
+
+    //start at index 0
+    //do the code block {} as long as i < numberArray.length
+    //next value goes up by 1 (increment is 1);
+    var sum = 0;
+    for (var i=0;i<numberArray.length;i=i+1){
+      console.log("the current index is "+i);
+      console.log("the value at index "+i+" is " +
+      numberArray[i]);
+      //add to the running total
+      sum = sum + numberArray[i];
+      console.log("the current sum is "+sum);}
+    //loop is finished. we can get the total
+      console.log("the average is "+(sum/numberArray.length));
+
+   /*
+   declare an array where each element is a word in a sentence (min 7 words)
+   -concatenate array in a for loop
+   -output to the console
+   */
+
+
+  </script>
+</body>
+
+</html>
