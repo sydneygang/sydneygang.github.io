@@ -17,16 +17,42 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-</head>
+    <style media="screen">
+      .height1{
+        height: 75px;
+      }
+      .height2{
+        height: 500px;
+      }
+      .boldRed{
 
-<body>
+      }
+    </style>
+</head>
+</body>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 height1 randomColor"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2 height2 randomColor"></div>
+        <div class="col-md-8 height2 myConsole"></div>
+        <div class="col-md-2 height2 randomColor"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 height1 randomColor"></div>
+      </div>
+
+    </div>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script>
 
-  <script>
     //declare an empty array
     var anotherArray = [];
 
@@ -70,8 +96,56 @@
    -output to the console
    */
 
+   //declare a empty string variable
+   var arrayOfWords =[ "hello","my","name","is","sydney"];
+   var fullSentence="";
+   //add each word
+   for (var j=0;j<arrayOfWords.length;j=j+1){
+   fullSentence = fullSentence + arrayOfWords[j]+" ";
+    }
+  //output of the full sentence
+  console.log("the full sentence is "+fullSentence);
 
+  //$ means jQuery function
+  //document is the entire html as a built in variable
+  //ready is an 'event'
+  //when the document is ready, execute the function
+  $(document).ready(function(){
+  //ge the myConsole elements
+  //call the html function
+  //html function writes html
+  //what we give the html function is a parameter
+  $(".myConsole").html("the full sentence is"+fullSentence);
+
+  //append adds to the existing html
+  //
+  $(".myConsole").append("<h1>here is another sentence </h1>");
+
+  $(".myConsole").prepend("<div class='boldRed'>Text before all </div>");
+
+
+
+
+  });
+  </script>
+  <script type="text/javascript">
+
+    //when the document is loaded
+    $(document).ready(function() {
+      //this function get a random color between 0 and 255
+      function getRandomColor() {
+        return Math.floor(Math.random() * 255);
+      }
+      //get all the elements (div) with the class .randomColor
+      var randomColor = $(".randomColor");
+
+      //loop through all elements
+      //for each element change the css background color to RGB + 3 random colors
+      $.each(randomColor, function(index, item) {
+        $(this).css("background-color", "RGB(" + getRandomColor() + "," + getRandomColor() + "," + getRandomColor() + ")");
+      })
+
+    })
   </script>
 </body>
-
 </html>
