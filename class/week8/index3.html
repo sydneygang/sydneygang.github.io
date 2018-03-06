@@ -52,41 +52,32 @@
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script>
-    var slides = [{
-        "source": "https://images.unsplash.com/photo-1424296308064-1eead03d1ad9?ixlib=rb-0.3.5&s=98963ffaa96835d8173a7d4868b3d82f&auto=format&fit=crop&w=2850&q=80",
-        "alternate": "nyc",
-        "caption": "city view",
-        "slideClass": "item active"},
-      {
-        "source": "https://images.unsplash.com/photo-1506111583091-becfd4bfa05d?ixlib=rb-0.3.5&s=9a11d0c27366e92b5d2b1a8351140264&auto=format&fit=crop&w=2850&q=80",
-        "alternate": "overview",
-        "caption": "sunset over view",
-        "slideClass": "item"},
-      {
-        "source": "https://images.unsplash.com/photo-1483653364400-eedcfb9f1f88?ixlib=rb-0.3.5&s=14e2b9ff23b60d0f4600405822344ffc&auto=format&fit=crop&w=2850&q=80",
-        "alternate": "mono overview",
-        "caption": "Monotone colour overview",
-        "slideClass": "item"}
-    ];
+    //get JSON
+    var url = "https://andersonguelphjs.github.io/class/week8/assets/carousel.json";
+    $.getJSON(url).done(function(data) {
+    console.log("success! ");
+    console.dir(data);
+    //paste here
 
-    var slidesHtml=" ";
-    for(var i=0;i<slides.length;i++){
-      console.log("i "+i);
-
-      slidesHtml+='<div class=" '+slides[i].slideClass+' ">'
-        +'<img src=" '+slides[i].source+'" alt="'+slides[i].alternate+'">'
-        +'<div class="carousel-caption">'
-          +slides[i].caption
-        +'</div>'
-        +'</div>';
+    var dataHtml = " ";
+    for (var i = 0; i < data.length; i++) {
+      console.log("i " + i);
+      dataHtml += '<div class=" ' + data[i].class + ' ">' +
+        '<img src=" ' + data[i].source + '" alt="">' +
+        '<div class="carousel-caption">' +
+        data[i].caption +
+        '</div>' +
+        '</div>';
     }
-    console.log(slidesHtml);
-
-    $(document).ready(function(){
-    $(".carousel-inner").html(slidesHtml);
-    //we need to strictly call this with dynamic HTML//
-    $(".carousel").carousel();
+    $(document).ready(function() {
+      $(".carousel-inner").html(dataHtml);
+      //we need to strictly call this with dynamic HTML//
+      $(".carousel").carousel();
     })
+    }).fail(function(data) {
+    console.log("failed!" + JSON.stringify(data));
+    });
+
 
 
   </script>
