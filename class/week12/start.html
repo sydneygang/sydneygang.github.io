@@ -121,8 +121,26 @@
             })
           }
           //alert("value "+val);
-        })
-    }
+        })///end select changes
+
+//event delegation; but this on any of this kind that shows up
+//  $(".buyButton").on("click", function(){
+    console.log("Clicked buy!");
+//    })
+
+$("body").on("click",".buyButton", function(){
+console.log("clicked buy!");
+//closest goes up the tree to find the first match
+var thisItem = $(this).closest(".itemContainer");
+var itemId = $(this).attr("data-id");
+
+//write this item + form html
+var html = "<div data-id='"+itemId+"' class='itemContainer'>"+thisItem.html()+"</div>"+formHtml;
+// prevent multiple click events
+ return false;
+})
+
+    }// end ititEvents
 
     function writeJSONToDOM(d){
       var html="";
@@ -155,6 +173,16 @@
         //loop this here
       $(".output").html(html);
     }
+
+var formHtml="";
+var formUrl="https://andersonguelphjs.github.io/class/week12/partial.html";
+//https://andersonguelphjs.github.io/class/week12/partial.html
+$.get(formUrl)
+  .done(function(data){//success
+    console.log("success get formHtml");
+    console.log(data);
+    formHtml=data;
+    //writeJSONToDOM(data.Sheet1);
     $(document).ready(function() {
       getOptions();
       getAds();
@@ -162,6 +190,13 @@
       $(".selectContainer").find("select").change();
       $("body").fadeIn();
     })
+  })
+  .fail(function(data){//fail
+    console.log("fail get select json! ");
+    console.dir(data);
+  })
+
+
   </script>
 </body>
 
