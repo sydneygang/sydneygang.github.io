@@ -21,6 +21,25 @@
 </head>
 
 <body>
+  <div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Attention:</h4>
+      </div>
+      <div class="modal-body">
+        <p>Please fill out both fields&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
   <div class="container">
     <div class="row">
       <div class="col-md-12 logo">
@@ -125,21 +144,55 @@
 
 //event delegation; but this on any of this kind that shows up
 //  $(".buyButton").on("click", function(){
-    console.log("Clicked buy!");
+console.log("Clicked buy!");
 //    })
 
 $("body").on("click",".buyButton", function(){
 console.log("clicked buy!");
 //closest goes up the tree to find the first match
 var thisItem = $(this).closest(".itemContainer");
-var itemId = $(this).attr("data-id");
+var itemId = thisItem.attr("data-id");
 
+//find means items go down the tree
+thisItem.find(".buttonContainer").remove();
 //write this item + form html
-var html = "<div data-id='"+itemId+"' class='itemContainer'>"+thisItem.html()+"</div>"+formHtml;
+var html = "<div data-id='"+itemId+"'class='itemContainer'>"+thisItem.html()+"</div>"+formHtml;
 // prevent multiple click events
  return false;
 })
 
+$("logo.").on("click", function(){
+
+  window.location.reload();
+})
+
+//delegated event
+$("body").on("click", ".submit", function(){
+  console.log("clicked submit");
+  //pseudocode:
+  //check if username and password are filled
+  //if not show the modal
+  //if yes show the confirmation method
+var username = $(".username").val();
+var username = $(".password").val();
+
+if (username && password){
+console.log("both are filled");
+$(".checkoutContainer").html("<div class='confirmationMessage'>Thank you for your order<br>confirmation #"+randomNumber+"</div>");
+//simulate data to database
+var itemId = $(".itemContainer").attr("data-id");
+var postobj={
+  "itemId": itemId,
+  "username":username,
+  "password":password,
+  "cNumber":randomNumber
+}
+$(".checkoutContainer").append("<br><br>"+JSON.stringify(postobj));
+}
+else{
+$(".modal").modal("show");
+}
+})
     }// end ititEvents
 
     function writeJSONToDOM(d){
@@ -191,6 +244,7 @@ $.get(formUrl)
       $("body").fadeIn();
     })
   })
+  $.get(formUrl)
   .fail(function(data){//fail
     console.log("fail get select json! ");
     console.dir(data);
