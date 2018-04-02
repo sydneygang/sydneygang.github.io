@@ -144,7 +144,59 @@ var spriteImages = [
     "width": 1472,
     "height": 325,
     "name": "walk"
-  }
+  },
+  {
+  "spriteMapUrl": "https://loucasl.github.io/class/week12/animation/images/ari.png",
+  "numFrames": 7,
+  "width": 3134,
+  "height": 422,
+  "name": "ari"
+},
+{
+    "spriteMapUrl": "https://celiafosch.github.io/class/week12/animation/images/henry.png",
+    "numFrames": 5,
+    "width": 480,
+    "height": 480,
+    "name": "Henry"
+  },
+  {
+    "spriteMapUrl":"https://biancabottos.github.io/class/week12/animation/images/sun.png",
+    "numFrames": 2,
+    "width": 500,
+    "height": 100,
+    "name": "sun"
+  },
+  {
+      "spriteMapUrl": "https://chell-github.github.io/class/week12/images/masae.png",
+      "numFrames": 29,
+      "width": 2900,
+      "height": 100,
+      "name": "masae"
+    },
+    {
+        "spriteMapUrl": "https://celiafosch.github.io/class/week12/animation/images/henry.png",
+        "numFrames": 5,
+        "width": 480,
+        "height": 480,
+        "name": "Henry"
+      },
+      {
+      "spriteMapUrl": "https://loucasl.github.io/class/week12/animation/images/ari.png",
+      "numFrames": 7,
+      "width": 3134,
+      "height": 422,
+      "name": "ari"
+    },
+
+  {
+    "spriteMapUrl": "https://sydneygang.github.io/class/images/walk.png",
+    "numFrames": 8,
+    "width": 1472,
+    "height": 325,
+    "name": "walk"
+  },
+
+
 ];
 var animations = []; //an array to hold the currently existing sprite obects
 var maxAnimations = spriteImages.length; //how many animations we want on the screen at any one time
