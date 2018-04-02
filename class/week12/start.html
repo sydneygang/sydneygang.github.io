@@ -157,11 +157,12 @@ var itemId = thisItem.attr("data-id");
 thisItem.find(".buttonContainer").remove();
 //write this item + form html
 var html = "<div data-id='"+itemId+"'class='itemContainer'>"+thisItem.html()+"</div>"+formHtml;
+$(".output").html(html);
 // prevent multiple click events
  return false;
 })
 
-$("logo.").on("click", function(){
+$(".logo").on("click", function(){
 
   window.location.reload();
 })
@@ -174,10 +175,11 @@ $("body").on("click", ".submit", function(){
   //if not show the modal
   //if yes show the confirmation method
 var username = $(".username").val();
-var username = $(".password").val();
+var password = $(".password").val();
 
 if (username && password){
 console.log("both are filled");
+var randomNumber = Math.floor(Math.random()*1000000);
 $(".checkoutContainer").html("<div class='confirmationMessage'>Thank you for your order<br>confirmation #"+randomNumber+"</div>");
 //simulate data to database
 var itemId = $(".itemContainer").attr("data-id");
